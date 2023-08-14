@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web iseng iseng ngitung usia</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            border: 1px solid black;
+            margin: 0 auto;
+            padding: 15px;
+            width: 500px;
+        }
+        #birthday {
+            padding: 15px;
+            font-size: 15px;
+            border: none;
+        }   
+        #klik{
+            font-size: 17px;
+            cursor: pointer;
+            padding: 10px;
+            background-color:#f08080;
+            color: white
+            
+        }
+        #klik:hover{
+            background-color:#cd5c5c;
+            color: black;
+        }   
+        label {
+            font-size: 17px;
+        }
+        .result {
+            font-size: 17px;
+            color:blue;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <h2>Cek umur anda</h2>
+    <label for="">masukan usia anda</label>
+    <input type="number" placeholder="contoh 1920" id="birthday">
+    <button id="klik" onclick="cekhasil()">klik gc</button>
+    <p class="result" id="resultview"></p>
+    </div>
+
+    <script>
+        
+
+        function cekhasil() {
+            const birthdayinput = document.getElementById ("birthday");
+            const birthday = birthdayinput.value;
+            const now = new Date().getFullYear();
+            const age = now - birthday
+            const resultview= document.getElementById("resultview")
+            resultview.innerHTML = "usia anda saat ini adalah " + age
+        }
+    </script>
+</body>
+</html>
